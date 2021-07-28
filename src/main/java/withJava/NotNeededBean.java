@@ -1,4 +1,4 @@
-package withXml;
+package withJava;
 
 public class NotNeededBean {
 }

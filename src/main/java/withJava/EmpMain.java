@@ -1,4 +1,4 @@
-package withXml;
+package withJava;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import java.util.List;

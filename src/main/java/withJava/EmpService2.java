@@ -1,4 +1,4 @@
-package withXml;
+package withJava;
 
 import java.util.List;
 
