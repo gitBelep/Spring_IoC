@@ -2,14 +2,23 @@ package withXml;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 public class EmployeeDaoTest {
-    private EmpDao dao = Mockito.mock(EmpDao.class);
-    private EmpService eSe = new EmpService(dao);
+//a)    private EmpDao dao = Mockito.mock(EmpDao.class);
+//a)    private EmpService eSe = new EmpService(dao);
+// or b)
+    @Mock
+    private EmpDao dao;
+
+    @InjectMocks
+    private EmpService eSe;
+
 
     @Test
     void testSaveAndList(){
