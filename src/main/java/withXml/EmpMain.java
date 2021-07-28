@@ -16,11 +16,8 @@ public class EmpMain {
             EmpService empService = context.getBean(EmpService.class);
             empService.saveEmp("Xavér");
 
-            List<Employee> emps = empService.listEmp();
-            System.out.print(emps.size());
-            for(Employee e : emps) {
-                System.out.print(", " + e.getName());
-            }
+            List<String> emps = empService.listEmp();
+            System.out.print(emps.size() +" "+ emps);
         }
     }
 

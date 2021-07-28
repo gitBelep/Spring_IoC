@@ -15,7 +15,7 @@ public class EmpService {
         dao.saveEmp(trimmedName);
     }
 
-    public List<Employee> listEmp(){
+    public List<String> listEmp(){
         return dao.listEmp();
     }
 

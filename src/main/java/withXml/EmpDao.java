@@ -10,8 +10,12 @@ public class EmpDao {
         employees.add(new Employee(name));
     }
 
-    public List<Employee> listEmp(){
-        return new ArrayList<>(employees);
+    public List<String> listEmp(){
+        List<String> result = new ArrayList<>();
+        for(Employee e : employees){
+            result. add(e.getName());
+        }
+        return result;
     }
 
 }
