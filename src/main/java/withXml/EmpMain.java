@@ -18,6 +18,14 @@ public class EmpMain {
 
             List<String> emps = empService.listEmp();
             System.out.print(emps.size() +" "+ emps);
+
+            EmpService2 empService2 = context.getBean(EmpService2.class);
+            empService2.saveEmp("Zénó");
+
+            List<String> emps2 = empService2.listEmp();
+            System.out.print(emps2.size() +" "+ emps2);
+
+
         }
     }
 
