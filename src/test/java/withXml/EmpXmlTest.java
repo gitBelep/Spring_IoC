@@ -17,8 +17,8 @@ class EmpXmlTest {
 
     @Test
     void saveAndList(){
-        eSe.saveEmp("Ünő");
-        eSe.saveEmp("Kőrisfás");
+        eSe.saveEmp("   Ünő   ");
+        eSe.saveEmp("Kőrisfás       ");
         List<String> employees = eSe.listEmp();
 
         assertEquals(2, employees.size());
