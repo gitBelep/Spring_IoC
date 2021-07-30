@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--  as id was an other name, there were 2 SimpleEmpDao Objects created NoUniqueBeanDefinitionExc -->
+    <bean id="simpleEmpDao" class="mixed.SimpleEmpDao" />
+
+    <bean id="employeeService" class="mixed.EmpService">
+        <constructor-arg ref="simpleEmpDao" />
+    </bean>
+</beans>
