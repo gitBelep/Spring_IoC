@@ -16,19 +16,9 @@ public class AppConfig {
     @Bean
     public String printAppVersion(){
         String ver = environment.getProperty("version");
-        System.out.println(ver);
+        System.out.println("Version - data from .property file: "+ ver);
         System.out.println(environment.getProperty("OS") + ": type of the OP system.");
         return ver;
     }
-
-    // @Autowired
-    //    private Environment environment;
-    //
-    //    @Bean
-    //    public String applicationVersion() {
-    //        String version = environment.getProperty("application.version");
-    //        System.out.println("Version: " + version);
-    //        System.out.println("OS: " + environment.getProperty("OS"));
-    //        return version;
-    //    }
+    
 }
