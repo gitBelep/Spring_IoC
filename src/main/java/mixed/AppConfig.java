@@ -5,6 +5,7 @@ import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 
 @Configuration
+@Lazy                           //effects only for the here defined Beans (printAppVersion)
 @ComponentScan(basePackageClasses = AppConfig.class)
 @ImportResource("classpath:/appl-context-mixed.xml")
 @PropertySource("classpath:/app.properties")
@@ -14,11 +15,11 @@ public class AppConfig {
     private Environment environment;
 
     @Bean
-    public String printAppVersion(){
+    public String printAppVersion() {
         String ver = environment.getProperty("version");
-        System.out.println("Version - data from .property file: "+ ver);
+        System.out.println("Version - data from .property file: " + ver);
         System.out.println(environment.getProperty("OS") + ": type of the OP system.");
         return ver;
     }
-    
+
 }
