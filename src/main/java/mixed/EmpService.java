@@ -1,8 +1,9 @@
 package mixed;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
-
 import java.util.List;
 
 //@Service                                      //not needed
@@ -11,6 +12,7 @@ public class EmpService {
     private MailServiceOk eMailOk;
     private ApplicationEventPublisher publisher;
     private EmpDao dao;                         //interface
+    private final static Logger LOGGER = LoggerFactory.getLogger(EmpService.class);
 
     public EmpService(@SimpleDao EmpDao dao) {  //which class
         this.dao = dao;
@@ -38,6 +40,8 @@ public class EmpService {
             EmpCreatedEvent event = new EmpCreatedEvent(this, trimmedName);
             publisher.publishEvent(event);
         }
+
+        LOGGER.info("Employee has created with name: "+ trimmedName +"  ~ logger");
     }
 
     @Autowired(required = false)
