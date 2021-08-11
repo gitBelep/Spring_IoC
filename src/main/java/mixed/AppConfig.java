@@ -9,6 +9,7 @@ import org.springframework.core.env.Environment;
 @ComponentScan(basePackageClasses = AppConfig.class)
 @ImportResource("classpath:/appl-context-mixed.xml")
 @PropertySource("classpath:/app.properties")
+@EnableAspectJAutoProxy
 public class AppConfig {
 
     @Autowired
